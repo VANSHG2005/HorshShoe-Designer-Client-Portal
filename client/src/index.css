@@ -1,0 +1,271 @@
+/* Google Fonts — Inter (body), Outfit (fallback display), Boldonse (artistic display), Meow Script (cursive accent) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Boldonse&family=Meow+Script&display=swap');
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bootstrap is imported via main.jsx to avoid PostCSS @import ordering issues */
+
+/* ========================================================
+   Base Styles & CSS Custom Properties
+   ======================================================== */
+:root {
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 72px;
+  --header-height: 64px;
+  --transition-speed: 0.2s;
+  --color-bg: #050505;
+  --color-surface: #0e0e0e;
+  --color-surface-raised: #141414;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-brand: #e11d48;
+  --color-brand-glow: rgba(225, 29, 72, 0.15);
+}
+
+/* ========================================================
+   Reset & Global Styles — Dark Editorial
+   ======================================================== */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: #e5e5e5;
+}
+
+/* ========================================================
+   Custom Utility Classes — Dark Studio Theme
+   ======================================================== */
+@layer components {
+  /* Dark glass morphism card */
+  .glass-card {
+    @apply bg-[#111111]/80 backdrop-blur-xl border border-white/[0.06] rounded-2xl shadow-card;
+  }
+
+  .glass-card-dark {
+    @apply bg-black/60 backdrop-blur-xl border border-white/[0.04] rounded-2xl shadow-card;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600;
+  }
+
+  /* Status badges — dark variant */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-planning {
+    @apply bg-surface-800 text-surface-300 border border-surface-700;
+  }
+
+  .status-in-progress {
+    @apply bg-sky-500/10 text-sky-400 border border-sky-500/20;
+  }
+
+  .status-review {
+    @apply bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .status-approved {
+    @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .status-changes-requested {
+    @apply bg-brand-500/10 text-brand-400 border border-brand-500/20;
+  }
+
+  .status-completed {
+    @apply bg-green-500/10 text-green-400 border border-green-500/20;
+  }
+
+  /* Priority indicators — dark */
+  .priority-low {
+    @apply bg-surface-800 text-surface-400 border border-surface-700;
+  }
+
+  .priority-medium {
+    @apply bg-yellow-500/10 text-yellow-400 border border-yellow-500/20;
+  }
+
+  .priority-high {
+    @apply bg-brand-500/10 text-brand-400 border border-brand-500/20;
+  }
+
+  /* Sidebar link styles — dark editorial */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-surface-500 
+           hover:bg-white/[0.04] hover:text-white 
+           transition-all duration-200 text-sm font-medium;
+  }
+
+  .sidebar-link-active {
+    @apply bg-brand-500/10 text-brand-400 border-l-2 border-brand-500;
+  }
+
+  /* Form input — dark */
+  .form-input {
+    @apply w-full px-4 py-2.5 bg-surface-900 border border-white/[0.08] 
+           rounded-xl text-white placeholder-surface-600
+           focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500/40
+           transition-all duration-200;
+  }
+
+  /* Primary button — rose/crimson */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 
+           bg-brand-600 hover:bg-brand-500 text-white rounded-xl 
+           font-medium text-sm shadow-glow hover:shadow-glow-lg
+           transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 
+           bg-white/[0.06] hover:bg-white/[0.1] text-surface-300 rounded-xl 
+           font-medium text-sm border border-white/[0.08]
+           transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 
+           bg-red-600 hover:bg-red-500 text-white rounded-xl 
+           font-medium text-sm shadow-sm
+           transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 
+           text-surface-400 hover:text-white hover:bg-white/[0.05] rounded-xl 
+           font-medium text-sm
+           transition-all duration-200;
+  }
+
+  /* KPI card — dark */
+  .kpi-card {
+    @apply glass-card p-6 hover:shadow-card-hover transition-all duration-300;
+  }
+
+  /* Table styles — dark */
+  .data-table {
+    @apply w-full text-sm text-left;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 text-xs font-semibold text-surface-500 uppercase tracking-wider 
+           bg-white/[0.02] border-b border-white/[0.06];
+  }
+
+  .data-table td {
+    @apply px-4 py-3.5 border-b border-white/[0.04] text-surface-300;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-white/[0.02];
+  }
+
+  /* Film grain overlay */
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+    animation: grain 0.5s steps(1) infinite;
+  }
+
+  /* Artistic editorial accent line */
+  .editorial-line {
+    @apply h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent;
+  }
+}
+
+/* ========================================================
+   Scrollbar Styling — Dark
+   ======================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================================
+   Override Bootstrap Modal/Toast z-index to work with our layout
+   ======================================================== */
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1050 !important;
+}
+
+.toast-container {
+  z-index: 1060 !important;
+}
+
+/* ========================================================
+   Bootstrap overrides for dark theme
+   ======================================================== */
+.modal-content {
+  background-color: #141414 !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: #e5e5e5 !important;
+  border-radius: 1rem !important;
+}
+
+.modal-header {
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.modal-footer {
+  border-top-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.btn-close {
+  filter: invert(1) !important;
+}
+
+.form-control, .form-select {
+  background-color: #0e0e0e !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e5e5e5 !important;
+  border-radius: 0.75rem !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #0e0e0e !important;
+  border-color: rgba(225, 29, 72, 0.4) !important;
+  box-shadow: 0 0 0 0.2rem rgba(225, 29, 72, 0.15) !important;
+  color: #e5e5e5 !important;
+}
+
+.form-control::placeholder {
+  color: #525252 !important;
+}
+
+.form-label {
+  color: #a3a3a3 !important;
+}
