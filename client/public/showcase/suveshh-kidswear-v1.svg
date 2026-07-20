@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="suveshh_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#suveshh_bg)" rx="20" />
+  <rect x="25" y="25" width="750" height="450" fill="none" stroke="#fcd34d" stroke-width="2" rx="16" stroke-dasharray="10 6" />
+
+  <!-- Doodles & footprints -->
+  <g transform="translate(400, 180)">
+    <circle cx="-120" cy="-40" r="16" fill="#f43f5e" opacity="0.15" />
+    <circle cx="120" cy="-20" r="20" fill="#3b82f6" opacity="0.15" />
+    <circle cx="-140" cy="50" r="14" fill="#10b981" opacity="0.15" />
+    <circle cx="130" cy="60" r="18" fill="#f59e0b" opacity="0.15" />
+    <text x="0" y="10" font-family="'Caveat', cursive" font-size="70" font-weight="bold" fill="#b45309" text-anchor="middle">सुवेष</text>
+  </g>
+
+  <text x="400" y="270" font-family="'Outfit', sans-serif" font-size="28" font-weight="bold" fill="#78350f" letter-spacing="4" text-anchor="middle">SUVUSHH KIDSWEAR</text>
+  <text x="400" y="305" font-family="'Caveat', cursive" font-size="22" fill="#92400e" text-anchor="middle">"Built on Love, Play &amp; Handcrafted Warmth"</text>
+  <text x="400" y="350" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#a16207" text-anchor="middle">Hand-Drawn Pattern Repeat System &bull; Packaging &amp; Apparel Tags</text>
+  <text x="400" y="420" font-family="'JetBrains Mono', monospace" font-size="11" fill="#b45309" text-anchor="middle">THE HORSE SHOE STUDIO &bull; BRAND IDENTITY SUITE</text>
+</svg>

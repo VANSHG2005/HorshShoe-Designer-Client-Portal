@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091310" />
+      <stop offset="50%" stop-color="#0d1f1a" />
+      <stop offset="100%" stop-color="#060e0c" />
+    </linearGradient>
+    <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d365" />
+      <stop offset="50%" stop-color="#fda085" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background: Production Artboard Mat -->
+  <rect width="1000" height="640" fill="url(#bgGrad)" />
+
+  <!-- Studio Artboard Boundary & Grid -->
+  <rect x="40" y="40" width="920" height="560" rx="16" fill="#0c1814" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.3" />
+  
+  <!-- Technical Specification Header Strip -->
+  <g opacity="0.8">
+    <text x="70" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" font-weight="700" fill="#10b981" letter-spacing="2">PROJECT: HSS-103 // VERDANT ORGANICS</text>
+    <text x="500" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle" letter-spacing="1.5">DIE-CUT RECYCLABLE BOTTLE LABEL SPECIFICATION (v1)</text>
+    <text x="930" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" fill="#10b981" text-anchor="end">SCALE: 1:1 • CMYK + GOLD FOIL</text>
+    <line x1="70" y1="90" x2="930" y2="90" stroke="#10b981" stroke-width="1" stroke-opacity="0.2" />
+  </g>
+
+  <!-- Technical Registration & Crop Marks -->
+  <g stroke="#10b981" stroke-width="1" opacity="0.4">
+    <!-- Top Left -->
+    <line x1="120" y1="120" x2="140" y2="120" />
+    <line x1="120" y1="120" x2="120" y2="140" />
+    <!-- Top Right -->
+    <line x1="880" y1="120" x2="860" y2="120" />
+    <line x1="880" y1="120" x2="880" y2="140" />
+    <!-- Bottom Left -->
+    <line x1="120" y1="520" x2="140" y2="520" />
+    <line x1="120" y1="520" x2="120" y2="500" />
+    <!-- Bottom Right -->
+    <line x1="880" y1="520" x2="860" y2="520" />
+    <line x1="880" y1="520" x2="880" y2="500" />
+    <!-- Target Circles -->
+    <circle cx="95" cy="320" r="8" fill="none" />
+    <line x1="80" y1="320" x2="110" y2="320" />
+    <line x1="95" y1="305" x2="95" y2="335" />
+    <circle cx="905" cy="320" r="8" fill="none" />
+    <line x1="890" y1="320" x2="920" y2="320" />
+    <line x1="905" y1="305" x2="905" y2="335" />
+  </g>
+
+  <!-- ── PRIMARY PACKAGING LABEL BODY (Die-Cut Wrap) ──────── -->
+  <g transform="translate(150, 130)">
+    <!-- Label Background Container with Soft Ambient Drop -->
+    <rect width="700" height="380" rx="18" fill="#06120e" stroke="#10b981" stroke-width="2" stroke-opacity="0.4" />
+    
+    <!-- Outer Foil Trim Line -->
+    <rect x="12" y="12" width="676" height="356" rx="12" fill="none" stroke="url(#goldFoil)" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.8" />
+    <rect x="16" y="16" width="668" height="348" rx="10" fill="none" stroke="url(#goldFoil)" stroke-width="0.8" opacity="0.6" />
+
+    <!-- Left Column: Nutritional & Environmental Callouts -->
+    <g transform="translate(45, 50)">
+      <text x="0" y="20" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="url(#goldFoil)" letter-spacing="2">INGREDIENTS &amp; HARVEST</text>
+      <text x="0" y="42" font-family="Inter, sans-serif" font-size="12" fill="#d1fae5">100% Organic Cold-Pressed Greens</text>
+      <text x="0" y="60" font-family="Inter, sans-serif" font-size="11" fill="#6ee7b7" opacity="0.8">Kale, Crisp Celery, Green Apple,</text>
+      <text x="0" y="76" font-family="Inter, sans-serif" font-size="11" fill="#6ee7b7" opacity="0.8">Ginger Root, Lemon, Spirulina</text>
+
+      <line x1="0" y1="100" x2="160" y2="100" stroke="#10b981" stroke-width="1" stroke-opacity="0.3" />
+
+      <!-- Nutrition Metrics Box -->
+      <g transform="translate(0, 120)">
+        <rect width="160" height="90" rx="8" fill="#042016" stroke="#10b981" stroke-width="1" stroke-opacity="0.2" />
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#a7f3d0">PER BOTTLE (330ml)</text>
+        <text x="12" y="48" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#ffffff">85 <tspan font-size="11" font-weight="400" fill="#6ee7b7">kcal</tspan></text>
+        <text x="12" y="70" font-family="Inter, sans-serif" font-size="10" fill="#34d399">ZERO ADDED SUGAR • RAW</text>
+      </g>
+
+      <!-- Cert Badges -->
+      <g transform="translate(0, 235)" opacity="0.85">
+        <rect width="70" height="24" rx="4" fill="#065f46" />
+        <text x="35" y="16" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">USDA BIO</text>
+        
+        <rect x="80" width="80" height="24" rx="4" fill="#047857" />
+        <text x="120" y="16" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">NON-GMO</text>
+      </g>
+    </g>
+
+    <!-- Center Column: Primary Brand Crest & Typography -->
+    <g transform="translate(350, 45)">
+      <!-- Botanical Crest Monogram Emblem -->
+      <circle cx="0" cy="40" r="34" fill="#04291d" stroke="url(#goldFoil)" stroke-width="1.5" />
+      
+      <!-- Botanical Leaf SVG Silhouette -->
+      <path d="M-10 42 C-14 26, 0 16, 0 16 C0 16, 14 26, 10 42 C6 54, -6 54, -10 42 Z" fill="url(#goldFoil)" />
+      <path d="M0 16 L0 52" stroke="#04291d" stroke-width="1.5" stroke-linecap="round" />
+      <circle cx="0" cy="56" r="2.5" fill="url(#goldFoil)" />
+
+      <!-- Brand Typography -->
+      <text x="0" y="115" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="4">VERDANT</text>
+      <text x="0" y="135" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="url(#goldFoil)" text-anchor="middle" letter-spacing="5">ORGANICS &bull; BOULDER, CO</text>
+
+      <line x1="-80" y1="155" x2="80" y2="155" stroke="url(#goldFoil)" stroke-width="1" stroke-opacity="0.4" />
+
+      <!-- Product Name -->
+      <text x="0" y="188" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#6ee7b7" text-anchor="middle" letter-spacing="1">COLD-PRESSED ELIXIR</text>
+      <text x="0" y="210" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="14" fill="#d1fae5" text-anchor="middle">Wild Kale &bull; Golden Ginger &bull; Citrus Bloom</text>
+
+      <!-- Volume & Packaging Callout -->
+      <g transform="translate(0, 245)">
+        <rect x="-85" y="0" width="170" height="28" rx="14" fill="#042f21" stroke="#10b981" stroke-width="1" stroke-opacity="0.5" />
+        <text x="0" y="18" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#a7f3d0" text-anchor="middle" letter-spacing="1.5">330 ML &bull; 11.2 FL OZ</text>
+      </g>
+    </g>
+
+    <!-- Right Column: Barcode, Recycle Seal & Batch Info -->
+    <g transform="translate(500, 50)">
+      <text x="145" y="20" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="url(#goldFoil)" text-anchor="end" letter-spacing="1">RECYCLABLE CRAFT</text>
+      
+      <!-- Sustainability Seal -->
+      <g transform="translate(95, 40)">
+        <circle cx="25" cy="25" r="24" fill="#04261b" stroke="#10b981" stroke-width="1" stroke-dasharray="3 3" />
+        <text x="25" y="23" font-family="Inter, sans-serif" font-size="16" fill="#10b981" text-anchor="middle">♻</text>
+        <text x="25" y="38" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#a7f3d0" text-anchor="middle">100% GLASS</text>
+      </g>
+
+      <text x="145" y="125" font-family="Inter, sans-serif" font-size="10" fill="#a7f3d0" text-anchor="end">KEEP REFRIGERATED (4°C)</text>
+      <text x="145" y="142" font-family="Inter, sans-serif" font-size="10" fill="#6ee7b7" opacity="0.8" text-anchor="end">SHAKE GENTLY &bull; RECYCLE BOTTLE</text>
+
+      <!-- Vector Barcode -->
+      <g transform="translate(35, 175)">
+        <rect width="110" height="50" fill="#ffffff" rx="4" />
+        <!-- Barcode Lines -->
+        <line x1="12" y1="8" x2="12" y2="42" stroke="#000" stroke-width="2" />
+        <line x1="16" y1="8" x2="16" y2="42" stroke="#000" stroke-width="1" />
+        <line x1="20" y1="8" x2="20" y2="42" stroke="#000" stroke-width="3" />
+        <line x1="26" y1="8" x2="26" y2="42" stroke="#000" stroke-width="1.5" />
+        <line x1="32" y1="8" x2="32" y2="42" stroke="#000" stroke-width="2" />
+        <line x1="38" y1="8" x2="38" y2="42" stroke="#000" stroke-width="4" />
+        <line x1="46" y1="8" x2="46" y2="42" stroke="#000" stroke-width="1" />
+        <line x1="52" y1="8" x2="52" y2="42" stroke="#000" stroke-width="3" />
+        <line x1="60" y1="8" x2="60" y2="42" stroke="#000" stroke-width="1.5" />
+        <line x1="66" y1="8" x2="66" y2="42" stroke="#000" stroke-width="3" />
+        <line x1="74" y1="8" x2="74" y2="42" stroke="#000" stroke-width="2" />
+        <line x1="80" y1="8" x2="80" y2="42" stroke="#000" stroke-width="1" />
+        <line x1="86" y1="8" x2="86" y2="42" stroke="#000" stroke-width="3" />
+        <line x1="94" y1="8" x2="94" y2="42" stroke="#000" stroke-width="2" />
+      </g>
+
+      <text x="145" y="245" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#6ee7b7" text-anchor="end">LOT: VD-2025-08 &bull; EXP 12/26</text>
+    </g>
+
+    <!-- Bottom Print Color Swatches / Quality Calibration Strip -->
+    <g transform="translate(45, 335)">
+      <text x="0" y="15" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#10b981">INK PASSES:</text>
+      <rect x="75" y="4" width="28" height="14" rx="2" fill="#042016" stroke="#10b981" stroke-width="0.5" />
+      <rect x="110" y="4" width="28" height="14" rx="2" fill="#10b981" />
+      <rect x="145" y="4" width="28" height="14" rx="2" fill="#059669" />
+      <rect x="180" y="4" width="28" height="14" rx="2" fill="url(#goldFoil)" />
+      <text x="220" y="15" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#6ee7b7">DEEP OBSIDIAN / EMERALD / GOLD FOIL STAMP (HOT FOIL 140°C)</text>
+    </g>
+  </g>
+
+  <!-- Dimension Arrows / Technical Drafting Callouts -->
+  <g stroke="#10b981" stroke-width="1" opacity="0.5">
+    <!-- Horizontal Dimension Top -->
+    <line x1="150" y1="110" x2="850" y2="110" />
+    <line x1="150" y1="105" x2="150" y2="115" />
+    <line x1="850" y1="105" x2="850" y2="115" />
+    <text x="500" y="105" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#a7f3d0" text-anchor="middle">TOTAL WRAP WIDTH: 210.0 mm</text>
+
+    <!-- Vertical Dimension Left -->
+    <line x1="130" y1="130" x2="130" y2="510" />
+    <line x1="125" y1="130" x2="135" y2="130" />
+    <line x1="125" y1="510" x2="135" y2="510" />
+    <text x="120" y="325" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#a7f3d0" text-anchor="end" transform="rotate(-90, 120, 325)">LABEL HEIGHT: 95.0 mm</text>
+  </g>
+
+  <!-- Studio Seal Footer -->
+  <g transform="translate(500, 580)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#10b981" text-anchor="middle" letter-spacing="2">THE HORSE SHOE STUDIO &bull; BRANDING &bull; LUXURY PACKAGING DIVISION</text>
+  </g>
+</svg>

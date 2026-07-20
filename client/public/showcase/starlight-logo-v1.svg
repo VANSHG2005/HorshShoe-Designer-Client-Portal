@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" fill="none">
+  <defs>
+    <linearGradient id="bgDraft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0716" />
+      <stop offset="100%" stop-color="#050308" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="640" fill="url(#bgDraft)" />
+
+  <!-- Construction Circles & Golden Ratio lines -->
+  <g stroke="#7c3aed" stroke-width="0.75" stroke-dasharray="3 3" opacity="0.4">
+    <circle cx="340" cy="320" r="160" />
+    <circle cx="340" cy="320" r="100" />
+    <circle cx="340" cy="320" r="50" />
+    <line x1="140" y1="320" x2="540" y2="320" />
+    <line x1="340" y1="120" x2="340" y2="520" />
+    <line x1="200" y1="180" x2="480" y2="460" />
+    <line x1="200" y1="460" x2="480" y2="180" />
+  </g>
+
+  <!-- Header -->
+  <text x="70" y="70" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" font-weight="700" fill="#a855f7" letter-spacing="2">PROJECT: HSS-102 // 2D GEOMETRY EXPLORATION (v1)</text>
+  <text x="930" y="70" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" fill="#7c3aed" text-anchor="end">STATUS: REVISED TO 3D</text>
+  <line x1="70" y1="85" x2="930" y2="85" stroke="#7c3aed" stroke-width="1" opacity="0.3" />
+
+  <!-- Monogram Draft -->
+  <g transform="translate(340, 320)">
+    <polygon points="0,-90 25,-25 90,0 25,25 0,90 -25,25 -90,0 -25,-25" fill="#7c3aed" opacity="0.5" stroke="#c084fc" stroke-width="1.5" />
+    <text x="0" y="140" font-family="'Outfit', sans-serif" font-size="28" font-weight="800" fill="#c084fc" text-anchor="middle" letter-spacing="6">STARLIGHT</text>
+  </g>
+
+  <!-- Review Panel -->
+  <g transform="translate(580, 160)">
+    <rect width="340" height="150" rx="12" fill="#1b112c" stroke="#dc2626" stroke-width="1.5" stroke-opacity="0.6" />
+    <text x="24" y="35" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#f87171">Reviewer Note &bull; Taylor Morgan (Starlight)</text>
+    <text x="24" y="65" font-family="Inter, sans-serif" font-size="11" fill="#e2e8f0">"The 2D monogram looks balanced, but for our 4K streaming bumpers, we need volumetric 3D rendering with iridescent neon refraction."</text>
+    <rect x="24" y="105" width="130" height="26" rx="6" fill="#7f1d1d" />
+    <text x="89" y="122" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#fecaca" text-anchor="middle">STATUS: REVISED TO V2</text>
+  </g>
+
+  <text x="500" y="615" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" fill="#7c3aed" text-anchor="middle">THE HORSE SHOE STUDIO &bull; 2D GRID DRAFT</text>
+</svg>

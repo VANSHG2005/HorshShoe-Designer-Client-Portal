@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="grad_starlightlogov2svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0b0d13" rx="16" />
+  <rect x="30" y="30" width="740" height="440" fill="url(#grad_starlightlogov2svg)" opacity="0.15" rx="12" stroke="#ec4899" stroke-width="1.5" />
+  <circle cx="400" cy="200" r="50" fill="#ec4899" opacity="0.2" />
+  <text x="400" y="215" font-family="Inter, sans-serif" font-size="36" font-weight="bold" fill="#ec4899" text-anchor="middle">🐴</text>
+  <text x="400" y="290" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">Starlight Media Brand v2</text>
+  <text x="400" y="325" font-family="Inter, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">3D Gradient Neon Refraction Marks</text>
+</svg>

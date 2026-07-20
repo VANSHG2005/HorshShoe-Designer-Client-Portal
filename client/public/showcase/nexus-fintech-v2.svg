@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" fill="none">
+  <defs>
+    <linearGradient id="bgGradFin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="50%" stop-color="#0b0f1e" />
+      <stop offset="100%" stop-color="#05060b" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1000" height="640" fill="url(#bgGradFin)" />
+
+  <!-- Studio Artboard Frame -->
+  <rect x="40" y="40" width="920" height="560" rx="16" fill="#0d1122" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Studio Blueprint Spec Bar -->
+  <g opacity="0.8">
+    <text x="70" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" font-weight="700" fill="#818cf8" letter-spacing="2">PROJECT: HSS-101 // NEXUS TECHNOLOGIES</text>
+    <text x="500" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" fill="#c7d2fe" text-anchor="middle" letter-spacing="1.5">MOBILE BANKING APP &bull; HIGH-FIDELITY DESIGN SYSTEM (v2)</text>
+    <text x="930" y="75" font-family="'JetBrains Mono', monospace, sans-serif" font-size="11" fill="#818cf8" text-anchor="end">FIGMA TOKENS &bull; DARK MODE</text>
+    <line x1="70" y1="90" x2="930" y2="90" stroke="#6366f1" stroke-width="1" stroke-opacity="0.2" />
+  </g>
+
+  <!-- Left: Device Frame (iPhone 16 Pro Mockup) -->
+  <g transform="translate(130, 110)">
+    <!-- Device Outer Chassis -->
+    <rect width="320" height="470" rx="42" fill="#030712" stroke="#1f2937" stroke-width="3" />
+    <rect x="3" y="3" width="314" height="464" rx="39" fill="none" stroke="#374151" stroke-width="1" opacity="0.4" />
+
+    <!-- Screen Glass Area -->
+    <g transform="translate(10, 10)">
+      <rect width="300" height="450" rx="32" fill="#0b0f19" />
+
+      <!-- Dynamic Island / Speaker Pill -->
+      <rect x="105" y="10" width="90" height="22" rx="11" fill="#000000" />
+      <circle cx="120" cy="21" r="5" fill="#111827" />
+
+      <!-- Status Bar Time & Icons -->
+      <text x="24" y="24" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#ffffff">9:41</text>
+      <g transform="translate(250, 15)" fill="#ffffff" opacity="0.9">
+        <rect width="14" height="9" rx="2" fill="none" stroke="#ffffff" stroke-width="1" />
+        <rect x="1.5" y="1.5" width="9" height="6" rx="1" fill="#ffffff" />
+      </g>
+
+      <!-- App Header: User Avatar & Bell -->
+      <g transform="translate(20, 48)">
+        <circle cx="16" cy="16" r="16" fill="#312e81" stroke="#6366f1" stroke-width="1.5" />
+        <text x="16" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#c7d2fe" text-anchor="middle">JB</text>
+        <text x="42" y="14" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Welcome back,</text>
+        <text x="42" y="27" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Jordan Blake</text>
+        
+        <!-- Notification Pill -->
+        <rect x="230" y="4" width="28" height="28" rx="8" fill="#1f293d" />
+        <circle cx="244" cy="18" r="5" fill="#6366f1" />
+        <circle cx="248" cy="14" r="2.5" fill="#ec4899" />
+      </g>
+
+      <!-- Holographic Balance Card -->
+      <g transform="translate(20, 95)" filter="url(#cardGlow)">
+        <rect width="260" height="135" rx="18" fill="url(#cardGrad)" />
+        <!-- Micro Chip & Contactless -->
+        <rect x="20" y="18" width="30" height="22" rx="4" fill="#fbbf24" opacity="0.9" />
+        <circle cx="230" cy="28" r="12" fill="#ffffff" opacity="0.25" />
+        <circle cx="240" cy="28" r="12" fill="#ffffff" opacity="0.25" />
+
+        <text x="20" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#e0e7ff" letter-spacing="1">TOTAL NET ASSETS</text>
+        <text x="20" y="95" font-family="Inter, sans-serif" font-size="24" font-weight="900" fill="#ffffff">$142,850.40</text>
+        
+        <text x="20" y="120" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" fill="#fbcfe8">&bull;&bull;&bull;&bull; 4892</text>
+        <text x="240" y="120" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">+12.4% &uarr;</text>
+      </g>
+
+      <!-- Action Buttons Row -->
+      <g transform="translate(20, 245)">
+        <g transform="translate(0, 0)">
+          <circle cx="28" cy="18" r="18" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+          <text x="28" y="22" font-family="Inter, sans-serif" font-size="13" fill="#818cf8" text-anchor="middle">&uarr;</text>
+          <text x="28" y="48" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Send</text>
+        </g>
+        <g transform="translate(70, 0)">
+          <circle cx="28" cy="18" r="18" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+          <text x="28" y="22" font-family="Inter, sans-serif" font-size="13" fill="#818cf8" text-anchor="middle">&darr;</text>
+          <text x="28" y="48" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Receive</text>
+        </g>
+        <g transform="translate(140, 0)">
+          <circle cx="28" cy="18" r="18" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+          <text x="28" y="22" font-family="Inter, sans-serif" font-size="13" fill="#818cf8" text-anchor="middle">&plus;</text>
+          <text x="28" y="48" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Add</text>
+        </g>
+        <g transform="translate(210, 0)">
+          <circle cx="28" cy="18" r="18" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+          <text x="28" y="22" font-family="Inter, sans-serif" font-size="13" fill="#818cf8" text-anchor="middle">&#9881;</text>
+          <text x="28" y="48" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Settings</text>
+        </g>
+      </g>
+
+      <!-- Recent Transactions Mini-Feed -->
+      <g transform="translate(20, 310)">
+        <text x="0" y="12" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Recent Transactions</text>
+        <text x="260" y="12" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#818cf8" text-anchor="end">View All</text>
+
+        <!-- Tx Item 1 -->
+        <rect y="22" width="260" height="42" rx="10" fill="#131b2e" />
+        <circle cx="22" cy="43" r="12" fill="#312e81" />
+        <text x="22" y="47" font-family="Inter, sans-serif" font-size="10" fill="#818cf8" text-anchor="middle">&star;</text>
+        <text x="44" y="38" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Starlight Studios</text>
+        <text x="44" y="52" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af">Monthly Pro Cloud</text>
+        <text x="245" y="45" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#f87171" text-anchor="end">-$49.99</text>
+
+        <!-- Tx Item 2 -->
+        <rect y="70" width="260" height="42" rx="10" fill="#131b2e" />
+        <circle cx="22" cy="91" r="12" fill="#064e3b" />
+        <text x="22" y="95" font-family="Inter, sans-serif" font-size="10" fill="#34d399" text-anchor="middle">&check;</text>
+        <text x="44" y="86" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Dividend Payout</text>
+        <text x="44" y="100" font-family="Inter, sans-serif" font-size="9" fill="#9ca3af">Verdant Organics</text>
+        <text x="245" y="93" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="end">+$1,280.00</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: Design System Inspection & Token Callouts -->
+  <g transform="translate(520, 120)">
+    <!-- Annotation 01: Biometric & Security -->
+    <g transform="translate(0, 0)">
+      <rect width="360" height="90" rx="14" fill="#111827" stroke="#374151" stroke-width="1" />
+      <rect x="14" y="14" width="32" height="32" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+      <text x="30" y="34" font-family="Inter, sans-serif" font-size="14" fill="#818cf8" text-anchor="middle">&#128274;</text>
+      <text x="56" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Biometric Touch / FaceID Flow</text>
+      <text x="56" y="44" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Zero-latency biometric handshake with haptic confirmation.</text>
+      <text x="56" y="62" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#a5b4fc">Status: Implemented &amp; WCAG AAA Passed</text>
+    </g>
+
+    <!-- Annotation 02: Color Token Palette -->
+    <g transform="translate(0, 110)">
+      <rect width="360" height="135" rx="14" fill="#111827" stroke="#374151" stroke-width="1" />
+      <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Figma Token Color Pipeline (Dark Mode)</text>
+      
+      <!-- Swatches -->
+      <g transform="translate(20, 42)">
+        <rect width="60" height="40" rx="6" fill="#6366f1" />
+        <text x="30" y="56" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">#6366F1</text>
+        <text x="30" y="68" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Primary</text>
+      </g>
+      <g transform="translate(90, 42)">
+        <rect width="60" height="40" rx="6" fill="#ec4899" />
+        <text x="30" y="56" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">#EC4899</text>
+        <text x="30" y="68" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Accent</text>
+      </g>
+      <g transform="translate(160, 42)">
+        <rect width="60" height="40" rx="6" fill="#0b0f19" stroke="#374151" stroke-width="1" />
+        <text x="30" y="56" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">#0B0F19</text>
+        <text x="30" y="68" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Surface</text>
+      </g>
+      <g transform="translate(230, 42)">
+        <rect width="60" height="40" rx="6" fill="#34d399" />
+        <text x="30" y="56" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">#34D399</text>
+        <text x="30" y="68" font-family="Inter, sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">Success</text>
+      </g>
+
+      <text x="20" y="122" font-family="'JetBrains Mono', monospace, sans-serif" font-size="9" fill="#818cf8">SYNC STATUS: 42 TOKENS EXPORTED TO TAILWIND &bull; V2.4</text>
+    </g>
+
+    <!-- Annotation 03: Sign-Off Box -->
+    <g transform="translate(0, 265)">
+      <rect width="360" height="110" rx="14" fill="#0d1b2a" stroke="#1e3a8a" stroke-width="1" />
+      <text x="20" y="30" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#93c5fd">Client Approval Sign-Off &bull; HSS-101</text>
+      <text x="20" y="50" font-family="Inter, sans-serif" font-size="11" fill="#cbd5e1">"Contrast and typography enhancements approved for production sprint."</text>
+      <text x="20" y="80" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#60a5fa">&bull; JORDAN BLAKE &mdash; VP OF PRODUCT</text>
+      <text x="20" y="95" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Nexus Technologies Global Inc.</text>
+    </g>
+  </g>
+
+  <!-- Studio Footer -->
+  <text x="500" y="618" font-family="'JetBrains Mono', monospace, sans-serif" font-size="10" font-weight="700" fill="#6366f1" text-anchor="middle" letter-spacing="2">THE HORSE SHOE STUDIO &bull; DIGITAL PRODUCT &bull; UI/UX DIVISION</text>
+</svg>
