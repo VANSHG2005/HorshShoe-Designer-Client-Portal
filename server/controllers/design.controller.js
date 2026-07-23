@@ -4,27 +4,7 @@ const Design = require('../models/Design');
 const DesignVersion = require('../models/DesignVersion');
 const Project = require('../models/Project');
 const logger = require('../utils/logger');
-
-/**
- * Helper: Role scoping for projects
- */
-const getAccessibleProjectIds = async (user) => {
-  if (user.role === 'admin' || user.role === 'project_manager') {
-    return null;
-  }
-  if (user.role === 'designer') {
-    const projects = await Project.find({
-      $or: [{ leadDesigner: user._id }, { team: user._id }],
-    }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  if (user.role === 'client') {
-    if (!user.clientCompany) return [];
-    const projects = await Project.find({ client: user.clientCompany }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  return [];
-};
+const getAccessibleProjectIds = require('../utils/roleScope');
 
 /**
  * Get designs with filtering and role scoping
@@ -62,10 +42,16 @@ const getDesigns = async (req, res, next) => {
     }
 
     if (search) {
-      query.$or = [
+      const searchOr = [
         { title: { $regex: search, $options: 'i' } },
         { description: { $regex: search, $options: 'i' } },
       ];
+      if (query.$or) {
+        query.$and = [{ $or: query.$or }, { $or: searchOr }];
+        delete query.$or;
+      } else {
+        query.$or = searchOr;
+      }
     }
 
     const designs = await Design.find(query)

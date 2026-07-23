@@ -61,11 +61,18 @@ const getProjects = async (req, res, next) => {
     }
 
     if (search) {
-      query.$or = [
+      const searchOr = [
         { title: { $regex: search, $options: 'i' } },
         { code: { $regex: search, $options: 'i' } },
         { description: { $regex: search, $options: 'i' } },
       ];
+      if (query.$or) {
+        // Combine role-scope $or with search $or using $and
+        query.$and = [{ $or: query.$or }, { $or: searchOr }];
+        delete query.$or;
+      } else {
+        query.$or = searchOr;
+      }
     }
 
     const pageNum = parseInt(page, 10) || 1;

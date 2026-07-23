@@ -24,8 +24,10 @@ export const getSocket = () => {
 export const connectSocket = (userId) => {
   const s = getSocket();
   if (!s.connected) {
+    // Remove any previously stacked connect handlers before adding a new one
+    s.off('connect');
     s.connect();
-    s.on('connect', () => {
+    s.once('connect', () => {
       if (userId) {
         s.emit('join', userId);
       }

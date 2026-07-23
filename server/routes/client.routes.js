@@ -53,11 +53,13 @@ router
   .get(getClients)
   .post(requireRole('admin', 'project_manager'), validate(clientSchema), createClient);
 
+const updateClientSchema = clientSchema.partial();
+
 // Get, Update, Delete
 router
   .route('/:id')
   .get(getClientById)
-  .put(requireRole('admin', 'project_manager'), validate(clientSchema), updateClient)
+  .put(requireRole('admin', 'project_manager'), validate(updateClientSchema), updateClient)
   .delete(requireRole('admin'), deleteClient);
 
 module.exports = router;

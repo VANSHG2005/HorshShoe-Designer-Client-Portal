@@ -4,27 +4,7 @@ const Design = require('../models/Design');
 const Client = require('../models/Client');
 const User = require('../models/User');
 const Activity = require('../models/Activity');
-
-/**
- * Helper: Retrieve accessible project IDs based on user role
- */
-const getAccessibleProjectIds = async (user) => {
-  if (user.role === 'admin' || user.role === 'project_manager') {
-    return null; // All projects
-  }
-  if (user.role === 'designer') {
-    const projects = await Project.find({
-      $or: [{ leadDesigner: user._id }, { team: user._id }],
-    }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  if (user.role === 'client') {
-    if (!user.clientCompany) return [];
-    const projects = await Project.find({ client: user.clientCompany }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  return [];
-};
+const getAccessibleProjectIds = require('../utils/roleScope');
 
 /**
  * Get dashboard KPI counters, pending approvals, and recent activity
@@ -143,6 +123,7 @@ const getDashboardCharts = async (req, res, next) => {
       review: { label: 'In Review', color: '#F59E0B' },
       completed: { label: 'Completed', color: '#10B981' },
       on_hold: { label: 'On Hold', color: '#94A3B8' },
+      cancelled: { label: 'Cancelled', color: '#EF4444' },
     };
 
     const projectsByStatus = Object.keys(statusMap).map((st) => {

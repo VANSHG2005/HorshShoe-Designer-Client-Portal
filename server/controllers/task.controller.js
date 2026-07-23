@@ -2,6 +2,7 @@ const Task = require('../models/Task');
 const Project = require('../models/Project');
 const logger = require('../utils/logger');
 const { createAndEmitNotification } = require('../utils/notifier');
+const getAccessibleProjectIds = require('../utils/roleScope');
 
 /**
  * Helper: Recalculate project progress based on completed tasks
@@ -19,9 +20,17 @@ const recalculateProjectProgress = async (projectId) => {
 
     const progress = Math.round((doneTasks / totalTasks) * 100);
     const updateData = { progress };
+
     if (progress === 100) {
       updateData.status = 'completed';
       updateData.completedAt = new Date();
+    } else {
+      // Reverse: if project was completed but tasks were re-opened, revert to in_progress
+      const project = await Project.findById(projectId).select('status').lean();
+      if (project && project.status === 'completed') {
+        updateData.status = 'in_progress';
+        updateData.completedAt = null;
+      }
     }
 
     await Project.findByIdAndUpdate(projectId, updateData);
@@ -29,27 +38,6 @@ const recalculateProjectProgress = async (projectId) => {
   } catch (error) {
     logger.error('Failed to recalculate project progress:', error);
   }
-};
-
-/**
- * Helper: Get accessible project IDs for role scoping
- */
-const getAccessibleProjectIds = async (user) => {
-  if (user.role === 'admin' || user.role === 'project_manager') {
-    return null; // All projects accessible
-  }
-  if (user.role === 'designer') {
-    const projects = await Project.find({
-      $or: [{ leadDesigner: user._id }, { team: user._id }],
-    }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  if (user.role === 'client') {
-    if (!user.clientCompany) return [];
-    const projects = await Project.find({ client: user.clientCompany }).select('_id');
-    return projects.map((p) => p._id);
-  }
-  return [];
 };
 
 /**
@@ -95,10 +83,16 @@ const getTasks = async (req, res, next) => {
     }
 
     if (search) {
-      query.$or = [
+      const searchOr = [
         { title: { $regex: search, $options: 'i' } },
         { description: { $regex: search, $options: 'i' } },
       ];
+      if (query.$or) {
+        query.$and = [{ $or: query.$or }, { $or: searchOr }];
+        delete query.$or;
+      } else {
+        query.$or = searchOr;
+      }
     }
 
     const tasks = await Task.find(query)

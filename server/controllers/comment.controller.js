@@ -56,9 +56,26 @@ const createComment = async (req, res, next) => {
       });
     }
 
+    // Resolve version — if caller didn't provide one, use the design's current version
+    let resolvedVersionId = versionId;
+    if (!resolvedVersionId) {
+      const currentVer = await DesignVersion.findOne({
+        design: designId,
+        versionNumber: design.currentVersion,
+      }).select('_id');
+      resolvedVersionId = currentVer?._id;
+    }
+
+    if (!resolvedVersionId) {
+      return res.status(400).json({
+        success: false,
+        message: 'No design version found. Upload a version first.',
+      });
+    }
+
     const comment = await Comment.create({
       design: designId,
-      version: versionId,
+      version: resolvedVersionId,
       author: req.user._id,
       content,
       type: type || 'general',
@@ -174,10 +191,20 @@ const submitReview = async (req, res, next) => {
       );
     }
 
-    // 3. Create review comment
+    // 3. Resolve the version ID for the review comment
+    let resolvedVersionId = versionId;
+    if (!resolvedVersionId) {
+      const currentVer = await DesignVersion.findOne({
+        design: design._id,
+        versionNumber: design.currentVersion,
+      }).select('_id');
+      resolvedVersionId = currentVer?._id;
+    }
+
+    // 4. Create review comment
     const comment = await Comment.create({
       design: design._id,
-      version: versionId || design._id,
+      version: resolvedVersionId,
       author: req.user._id,
       content:
         notes ||
@@ -187,7 +214,7 @@ const submitReview = async (req, res, next) => {
       type: action === 'approve' ? 'approval' : 'revision_request',
     });
 
-    // 4. Log Activity
+    // 5. Log Activity
     const actAction = action === 'approve' ? 'approved_design' : 'requested_changes';
     await Activity.create({
       user: req.user._id,
